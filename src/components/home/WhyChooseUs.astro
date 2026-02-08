@@ -1,0 +1,32 @@
+---
+import Container from '../ui/Container.astro';
+import SectionHeader from '../ui/SectionHeader.astro';
+import { advantages } from '../../data/services';
+---
+
+<section id="why-us" class="section-padding">
+  <Container>
+    <SectionHeader
+      title="Why Choose Us"
+      subtitle="We combine deep technical expertise with a relentless focus on delivering measurable business outcomes."
+    />
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {advantages.map((item) => (
+        <div class="flex gap-4">
+          <div class="shrink-0 w-12 h-12 rounded-lg bg-primary-50 text-primary-500 flex items-center justify-center">
+            <Fragment set:html={item.icon} />
+          </div>
+          <div>
+            <h3 class="font-heading font-semibold text-gray-900 mb-1">
+              {item.title}
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>

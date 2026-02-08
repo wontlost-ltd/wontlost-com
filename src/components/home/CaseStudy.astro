@@ -1,0 +1,72 @@
+---
+import Container from '../ui/Container.astro';
+import SectionHeader from '../ui/SectionHeader.astro';
+import { caseStudy } from '../../data/services';
+---
+
+<section id="case-study" class="section-padding section-bg-alt">
+  <Container>
+    <SectionHeader
+      title="Proven Results"
+      subtitle="See how we helped our clients overcome complex technical challenges and achieve transformative outcomes."
+    />
+
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <div class="grid lg:grid-cols-2">
+        <!-- 左侧视觉 -->
+        <div class="bg-gradient-to-br from-primary-500 to-primary-700 p-8 lg:p-12 flex flex-col justify-center text-white">
+          <div class="text-sm font-medium text-primary-200 uppercase tracking-wider mb-2">
+            {caseStudy.industry}
+          </div>
+          <h3 class="text-2xl lg:text-3xl font-heading font-bold mb-4">
+            {caseStudy.client}
+          </h3>
+          <p class="text-primary-100 leading-relaxed">
+            {caseStudy.challenge}
+          </p>
+
+          <!-- 指标 -->
+          <div class="grid grid-cols-3 gap-4 mt-8 pt-8 border-t border-primary-400/30">
+            {caseStudy.metrics.map((metric) => (
+              <div>
+                <div class="text-2xl lg:text-3xl font-heading font-bold">
+                  {metric.value}
+                </div>
+                <div class="text-sm text-primary-200 mt-1">
+                  {metric.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- 右侧内容 -->
+        <div class="p-8 lg:p-12 flex flex-col justify-center">
+          <h4 class="text-lg font-heading font-semibold text-gray-900 mb-6">
+            Our Solution
+          </h4>
+          <ul class="space-y-4">
+            {caseStudy.solution.map((item) => (
+              <li class="flex gap-3">
+                <svg class="w-5 h-5 text-primary-500 shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="text-gray-700">{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href="#contact"
+            class="mt-8 inline-flex items-center text-primary-500 font-heading font-semibold hover:text-primary-600 transition-colors"
+          >
+            Discuss your project
+            <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

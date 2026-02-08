@@ -1,0 +1,63 @@
+---
+import Container from '../ui/Container.astro';
+import SectionHeader from '../ui/SectionHeader.astro';
+import { processSteps } from '../../data/services';
+---
+
+<section id="process" class="section-padding section-bg-alt">
+  <Container>
+    <SectionHeader
+      title="How We Work"
+      subtitle="A proven, transparent process that keeps you informed and in control at every stage."
+    />
+
+    <!-- 桌面端水平时间线 -->
+    <div class="hidden lg:block">
+      <div class="relative">
+        <!-- 连接线 -->
+        <div class="absolute top-6 left-0 right-0 h-0.5 bg-primary-200"></div>
+
+        <div class="grid grid-cols-5 gap-4">
+          {processSteps.map((step) => (
+            <div class="relative text-center">
+              <!-- 步骤编号 -->
+              <div class="relative z-10 w-12 h-12 mx-auto bg-primary-500 text-white rounded-full flex items-center justify-center font-heading font-bold text-lg shadow-lg shadow-primary-500/25">
+                {step.number}
+              </div>
+              <h3 class="mt-4 font-heading font-semibold text-gray-900">
+                {step.title}
+              </h3>
+              <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+                {step.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- 移动端垂直步骤 -->
+    <div class="lg:hidden space-y-8">
+      {processSteps.map((step, index) => (
+        <div class="flex gap-4">
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 bg-primary-500 text-white rounded-full flex items-center justify-center font-heading font-bold shrink-0 shadow-lg shadow-primary-500/25">
+              {step.number}
+            </div>
+            {index < processSteps.length - 1 && (
+              <div class="w-0.5 flex-1 bg-primary-200 mt-2"></div>
+            )}
+          </div>
+          <div class="pb-8">
+            <h3 class="font-heading font-semibold text-gray-900">
+              {step.title}
+            </h3>
+            <p class="mt-1 text-sm text-gray-600 leading-relaxed">
+              {step.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>

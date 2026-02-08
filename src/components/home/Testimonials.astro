@@ -1,0 +1,51 @@
+---
+import Container from '../ui/Container.astro';
+import SectionHeader from '../ui/SectionHeader.astro';
+import { testimonials } from '../../data/testimonials';
+---
+
+<section class="section-padding">
+  <Container>
+    <SectionHeader
+      title="What Clients Say"
+      subtitle="Don't just take our word for it. Here's what our partners have to say about working with us."
+    />
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {testimonials.map((testimonial) => (
+        <div class="bg-white rounded-xl p-6 lg:p-8 shadow-sm border border-gray-100 flex flex-col">
+          <!-- 星评 -->
+          <div class="flex gap-1 mb-4">
+            {Array.from({ length: testimonial.rating }).map(() => (
+              <svg class="w-5 h-5 text-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+              </svg>
+            ))}
+          </div>
+
+          <!-- 引言 -->
+          <blockquote class="flex-1">
+            <p class="text-gray-700 leading-relaxed italic">
+              "{testimonial.quote}"
+            </p>
+          </blockquote>
+
+          <!-- 作者 -->
+          <div class="mt-6 pt-6 border-t border-gray-100 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center font-heading font-bold text-sm">
+              {testimonial.author.split(' ').map(n => n[0]).join('')}
+            </div>
+            <div>
+              <div class="font-heading font-semibold text-gray-900 text-sm">
+                {testimonial.author}
+              </div>
+              <div class="text-gray-500 text-xs">
+                {testimonial.role}, {testimonial.company}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>

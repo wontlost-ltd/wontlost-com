@@ -1,0 +1,26 @@
+---
+import Container from '../ui/Container.astro';
+import SectionHeader from '../ui/SectionHeader.astro';
+import ServiceCard from '../ui/ServiceCard.astro';
+import { services } from '../../data/services';
+---
+
+<section id="services" class="section-padding">
+  <Container>
+    <SectionHeader
+      title="What We Do"
+      subtitle="End-to-end technology services designed to accelerate your digital transformation and deliver measurable business impact."
+    />
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {services.map((service) => (
+        <ServiceCard
+          icon={service.icon}
+          title={service.title}
+          description={service.description}
+          href={service.href}
+        />
+      ))}
+    </div>
+  </Container>
+</section>
