@@ -1,0 +1,377 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/header/Header.astro';
+import Footer from '../components/footer/Footer.astro';
+import Container from '../components/ui/Container.astro';
+import Button from '../components/ui/Button.astro';
+---
+
+<BaseLayout
+  title="CKEditor Builder - Visual CKEditor 5 Configuration Tool | wontlost"
+  description="Configure CKEditor 5 visually with a 7-step wizard. Drag-and-drop toolbar builder, 70+ plugins, live preview, and multi-format code export in Java, TypeScript, or JSON."
+>
+  <Header />
+  <main>
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-white via-primary-50/30 to-white">
+      <Container>
+        <div class="section-padding">
+          <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div class="animate-fade-in-up">
+              <a href="/" class="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-primary-500 transition-colors mb-6">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+                Back to wontlost.com
+              </a>
+
+              <div class="inline-flex items-center gap-2 px-3 py-1 bg-primary-50 text-primary-600 text-sm font-medium rounded-full mb-6">
+                <span class="w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
+                Companion tool for VaadinCKEditor
+              </div>
+
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-gray-900 tracking-tight leading-tight">
+                CKEditor
+                <span class="text-primary-500"> Builder</span>
+              </h1>
+
+              <p class="mt-6 text-lg text-gray-600 leading-relaxed max-w-lg">
+                Stop hand-coding CKEditor configurations. Visually configure your editor in minutes with an interactive 7-step wizard, then export production-ready code.
+              </p>
+
+              <div class="mt-8 flex flex-wrap gap-4">
+                <Button href="https://ckeditor-builder.wontlost.com" variant="primary" size="lg">
+                  Launch Builder
+                </Button>
+                <Button href="https://vaadin.com/directory/component/ckeditorvaadin" variant="secondary" size="lg">
+                  VaadinCKEditor Add-on
+                </Button>
+              </div>
+
+              <div class="mt-10 flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-gray-500">
+                <div class="flex items-center gap-2">
+                  <svg class="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Free to use
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  No account required
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  CKEditor 5 v47.4.0
+                </div>
+              </div>
+            </div>
+
+            <!-- 右侧 Builder 示意图 -->
+            <div class="relative animate-fade-in-up-delay-1 hidden lg:block">
+              <div class="relative w-full aspect-square max-w-lg mx-auto">
+                <div class="absolute inset-0 bg-gradient-to-br from-primary-100 to-primary-50 rounded-3xl rotate-3"></div>
+                <div class="absolute inset-0 bg-white rounded-3xl shadow-xl border border-gray-100 -rotate-1">
+                  <div class="p-6 h-full flex flex-col justify-center">
+                    <div class="flex gap-2 mb-3">
+                      <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                      <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                      <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                    </div>
+                    <div class="text-xs text-gray-400 mb-4 font-mono">CKEditor Builder</div>
+
+                    <!-- 模拟 Builder 界面 -->
+                    <div class="space-y-3">
+                      <!-- 步骤指示器 -->
+                      <div class="flex gap-1.5 mb-4">
+                        {[1,2,3,4,5,6,7].map((n) => (
+                          <div class:list={[
+                            'w-8 h-1.5 rounded-full',
+                            n <= 5 ? 'bg-primary-500' : 'bg-gray-200',
+                          ]} />
+                        ))}
+                      </div>
+
+                      <!-- 模拟工具栏 -->
+                      <div class="bg-gray-50 rounded-lg p-3 border border-gray-200">
+                        <div class="text-xs text-gray-500 mb-2 font-medium">Toolbar Preview</div>
+                        <div class="flex flex-wrap gap-1">
+                          {['B', 'I', 'U', 'S', '|', 'H1', 'H2', '|', 'UL', 'OL', '|', 'Link', 'Img'].map((item) => (
+                            <div class:list={[
+                              'text-xs font-mono rounded',
+                              item === '|' ? 'w-px h-5 bg-gray-300 mx-0.5' : 'px-2 py-1 bg-white border border-gray-200 text-gray-700',
+                            ]}>
+                              {item !== '|' && item}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <!-- 模拟插件列表 -->
+                      <div class="bg-gray-50 rounded-lg p-3 border border-gray-200">
+                        <div class="text-xs text-gray-500 mb-2 font-medium">Plugins (42 selected)</div>
+                        <div class="flex flex-wrap gap-1">
+                          {['Bold', 'Italic', 'Image', 'Table', 'Link', 'List', '+36 more'].map((p) => (
+                            <span class:list={[
+                              'px-2 py-0.5 text-xs rounded-full',
+                              p.startsWith('+') ? 'bg-primary-50 text-primary-600' : 'bg-green-50 text-green-700',
+                            ]}>
+                              {p}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <!-- 模拟代码输出 -->
+                      <div class="bg-gray-900 rounded-lg p-3">
+                        <div class="flex gap-3 mb-2">
+                          <span class="text-xs text-primary-400 font-medium">Java</span>
+                          <span class="text-xs text-gray-500">TypeScript</span>
+                          <span class="text-xs text-gray-500">JSON</span>
+                        </div>
+                        <div class="font-mono text-xs text-gray-300 space-y-1">
+                          <div><span class="text-blue-400">VaadinCKEditor</span> editor =</div>
+                          <div class="pl-2"><span class="text-blue-400">VaadinCKEditor</span>.create()</div>
+                          <div class="pl-4">.withPreset(<span class="text-green-400">FULL</span>)</div>
+                          <div class="pl-4">.build();</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- 7-Step Wizard Overview -->
+    <section class="section-padding section-bg-alt">
+      <Container>
+        <div class="text-center mb-12 lg:mb-16">
+          <h2 class="text-3xl sm:text-4xl font-heading font-bold text-gray-900 tracking-tight">
+            7 Steps to a Perfect Editor
+          </h2>
+          <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+            The wizard guides you through every aspect of CKEditor configuration, from editor type selection to production-ready code export.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { step: '1', title: 'Getting Started', desc: 'Choose a preset (Standard, Full, Minimal) or start from scratch with custom mode.' },
+            { step: '2', title: 'Editor Type', desc: 'Select from Classic, Inline, Balloon, or BalloonBlock editor styles.' },
+            { step: '3', title: 'Plugin Selection', desc: 'Browse 70+ free and premium plugins with filtering and dependency auto-resolution.' },
+            { step: '4', title: 'Advanced Config', desc: 'Configure content security, paste behavior, table options, and more.' },
+            { step: '5', title: 'Toolbar Builder', desc: 'Drag-and-drop toolbar customization with multi-line and style options.' },
+            { step: '6', title: 'Style & Language', desc: 'Set theme (auto/light/dark), language, and RTL support.' },
+            { step: '7', title: 'Preview & Export', desc: 'Live editor preview with code export in Java, TypeScript, or JSON.' },
+          ].map((item, index) => (
+            <div class:list={[
+              'relative bg-white rounded-xl p-6 border border-gray-100 shadow-sm',
+              index === 6 && 'sm:col-span-2 lg:col-span-1',
+            ]}>
+              <div class="w-8 h-8 bg-primary-500 text-white rounded-full flex items-center justify-center font-heading font-bold text-sm mb-4">
+                {item.step}
+              </div>
+              <h3 class="font-heading font-semibold text-gray-900 mb-2">{item.title}</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+
+    <!-- Key Features -->
+    <section class="section-padding">
+      <Container>
+        <div class="text-center mb-12 lg:mb-16">
+          <h2 class="text-3xl sm:text-4xl font-heading font-bold text-gray-900 tracking-tight">
+            Key Features
+          </h2>
+          <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+            Everything you need to configure CKEditor 5 without touching JSON or reading API docs.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            {
+              icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" /></svg>`,
+              title: 'Multi-Format Code Export',
+              desc: 'Generate ready-to-paste code in Java (Vaadin), TypeScript, or JSON config — with timestamps and metadata.',
+            },
+            {
+              icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" /></svg>`,
+              title: '70+ Plugin Library',
+              desc: 'Browse free and premium CKEditor plugins with automatic dependency resolution and compatibility checks.',
+            },
+            {
+              icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" /></svg>`,
+              title: 'Drag-and-Drop Toolbar',
+              desc: 'Visually arrange toolbar items, add separators, and configure multi-line layouts with real-time preview.',
+            },
+            {
+              icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`,
+              title: 'Live Editor Preview',
+              desc: 'See your configured editor in action before exporting. Test all 4 editor types with your selected plugins.',
+            },
+            {
+              icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" /></svg>`,
+              title: 'Multi-Language UI',
+              desc: 'Builder interface available in English, Chinese, French, Spanish, Russian, and Arabic with full RTL support.',
+            },
+            {
+              icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" /></svg>`,
+              title: 'Theme & Styling',
+              desc: 'Auto-detect Vaadin Lumo theme, configure dark mode, and customize toolbar colors and backgrounds.',
+            },
+          ].map((feature) => (
+            <div class="flex gap-4">
+              <div class="shrink-0 w-12 h-12 rounded-lg bg-primary-50 text-primary-500 flex items-center justify-center">
+                <Fragment set:html={feature.icon} />
+              </div>
+              <div>
+                <h3 class="font-heading font-semibold text-gray-900 mb-1">{feature.title}</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">{feature.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+
+    <!-- Supported Editor Types -->
+    <section class="section-padding section-bg-alt">
+      <Container>
+        <div class="text-center mb-12 lg:mb-16">
+          <h2 class="text-3xl sm:text-4xl font-heading font-bold text-gray-900 tracking-tight">
+            4 Editor Types Supported
+          </h2>
+          <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+            Configure any CKEditor 5 editor variant — each with its own toolbar behavior and editing experience.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-6">
+          {[
+            { name: 'Classic', desc: 'Traditional WYSIWYG with a fixed toolbar above the content area. Best for form-based editing.' },
+            { name: 'Inline', desc: 'Lightweight in-place editing. Toolbar appears when you focus the editable area.' },
+            { name: 'Balloon', desc: 'Floating toolbar that appears on text selection. Minimal UI footprint.' },
+            { name: 'BalloonBlock', desc: 'Block-level toolbar plus inline balloon. Combines block and selection controls.' },
+          ].map((type) => (
+            <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+              <h3 class="font-heading font-semibold text-gray-900 text-lg mb-2">{type.name} Editor</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{type.desc}</p>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+
+    <!-- Code Export Examples -->
+    <section class="section-padding">
+      <Container>
+        <div class="text-center mb-12 lg:mb-16">
+          <h2 class="text-3xl sm:text-4xl font-heading font-bold text-gray-900 tracking-tight">
+            Export Production-Ready Code
+          </h2>
+          <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+            The builder generates code you can copy directly into your project. No manual translation needed.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-6">
+          <!-- Java -->
+          <div class="rounded-xl overflow-hidden border border-gray-200">
+            <div class="bg-gray-900 px-4 py-3 flex items-center justify-between">
+              <span class="text-sm text-gray-300 font-mono">Java (Vaadin)</span>
+              <span class="text-xs text-green-400">Recommended</span>
+            </div>
+            <div class="bg-gray-950 p-4 font-mono text-sm text-gray-300 leading-relaxed">
+              <div><span class="text-blue-400">VaadinCKEditor</span> editor =</div>
+              <div class="pl-2"><span class="text-blue-400">VaadinCKEditor</span>.create()</div>
+              <div class="pl-4">.withPreset(<span class="text-green-400">STANDARD</span>)</div>
+              <div class="pl-4">.withType(<span class="text-green-400">CLASSIC</span>)</div>
+              <div class="pl-4">.withTheme(<span class="text-green-400">AUTO</span>)</div>
+              <div class="pl-4">.withLanguage(<span class="text-amber-400">"en"</span>)</div>
+              <div class="pl-4">.build();</div>
+            </div>
+          </div>
+
+          <!-- TypeScript -->
+          <div class="rounded-xl overflow-hidden border border-gray-200">
+            <div class="bg-gray-900 px-4 py-3">
+              <span class="text-sm text-gray-300 font-mono">TypeScript</span>
+            </div>
+            <div class="bg-gray-950 p-4 font-mono text-sm text-gray-300 leading-relaxed">
+              <div><span class="text-purple-400">import</span> {'{'} ClassicEditor {'}'}</div>
+              <div class="pl-2"><span class="text-purple-400">from</span> <span class="text-amber-400">'ckeditor5'</span>;</div>
+              <div class="mt-2"><span class="text-blue-400">ClassicEditor</span>.create(</div>
+              <div class="pl-2">element, {'{'}</div>
+              <div class="pl-4">plugins: [<span class="text-green-400">...</span>],</div>
+              <div class="pl-4">toolbar: [<span class="text-green-400">...</span>],</div>
+              <div class="pl-2">{'}'})</div>
+            </div>
+          </div>
+
+          <!-- JSON -->
+          <div class="rounded-xl overflow-hidden border border-gray-200">
+            <div class="bg-gray-900 px-4 py-3">
+              <span class="text-sm text-gray-300 font-mono">JSON Config</span>
+            </div>
+            <div class="bg-gray-950 p-4 font-mono text-sm text-gray-300 leading-relaxed">
+              <div>{'{'}</div>
+              <div class="pl-2"><span class="text-blue-400">"type"</span>: <span class="text-amber-400">"classic"</span>,</div>
+              <div class="pl-2"><span class="text-blue-400">"preset"</span>: <span class="text-amber-400">"standard"</span>,</div>
+              <div class="pl-2"><span class="text-blue-400">"plugins"</span>: [<span class="text-green-400">...</span>],</div>
+              <div class="pl-2"><span class="text-blue-400">"toolbar"</span>: [<span class="text-green-400">...</span>],</div>
+              <div class="pl-2"><span class="text-blue-400">"theme"</span>: <span class="text-amber-400">"auto"</span></div>
+              <div>{'}'}</div>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- CTA -->
+    <section class="relative overflow-hidden">
+      <div class="bg-gradient-to-r from-primary-600 to-primary-700">
+        <Container>
+          <div class="section-padding text-center">
+            <h2 class="text-3xl sm:text-4xl font-heading font-bold text-white tracking-tight">
+              Try the CKEditor Builder Now
+            </h2>
+            <p class="mt-4 text-lg text-primary-100 max-w-2xl mx-auto">
+              Configure your perfect CKEditor 5 instance in minutes. Free, no account required.
+            </p>
+
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+              <Button href="https://ckeditor-builder.wontlost.com" variant="outline" size="lg">
+                Launch Builder
+              </Button>
+              <a
+                href="https://github.com/wontlost-ltd/vaadin-ckeditor"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-6 py-4 text-primary-100 hover:text-white font-medium transition-colors"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                View Source on GitHub
+              </a>
+            </div>
+
+            <p class="mt-6 text-sm text-primary-200">
+              Part of the VaadinCKEditor ecosystem by wontlost
+            </p>
+          </div>
+        </Container>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -15,7 +15,7 @@ export const footerColumns: FooterColumn[] = [
       { label: 'Aster Lang', href: 'https://aster-lang.cloud/' },
       { label: 'Aster Cloud', href: 'https://aster-lang.cloud/' },
       { label: 'VaadinCKEditor', href: 'https://vaadin.com/directory/component/ckeditorvaadin' },
-      { label: 'CKEditor Builder', href: 'https://ckeditor-builder.wontlost.com' },
+      { label: 'CKEditor Builder', href: '/ckeditor-builder' },
     ],
   },
   {

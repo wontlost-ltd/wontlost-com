@@ -21,7 +21,7 @@ export const products: Product[] = [
     name: 'CKEditor Builder',
     tagline: 'Visual CKEditor configuration tool',
     description: 'An interactive 7-step wizard for configuring CKEditor 5 instances. Drag-and-drop toolbar builder, live preview, and multi-format code export in Java, TypeScript, or JSON.',
-    href: 'https://ckeditor-builder.wontlost.com',
+    href: '/ckeditor-builder',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.25 3.014a.75.75 0 01-1.08-.79l.965-5.86-4.254-4.147a.75.75 0 01.416-1.28l5.884-.855L10.73 0a.75.75 0 011.34 0l2.63 5.25 5.884.855a.75.75 0 01.416 1.28l-4.254 4.147.965 5.86a.75.75 0 01-1.08.79l-5.25-3.014z" /></svg>`,
     badges: ['Spring Boot', 'Vaadin', 'Live Preview', 'Code Export'],
   },
