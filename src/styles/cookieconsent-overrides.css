@@ -1,0 +1,126 @@
+/* Cookie Consent v3 样式覆盖 — 适配 wontlost.com 设计风格 */
+:root {
+  --cc-bg: rgba(255, 255, 255, 0.88);
+  --cc-text: #1f2937;
+  --cc-btn-primary-bg: #2563eb;
+  --cc-btn-primary-text: #fff;
+  --cc-btn-primary-hover-bg: #1d4ed8;
+  --cc-btn-secondary-bg: rgba(37, 99, 235, 0.08);
+  --cc-btn-secondary-text: #1e3a8a;
+  --cc-btn-secondary-hover-bg: rgba(37, 99, 235, 0.15);
+  --cc-separator-border-color: rgba(37, 99, 235, 0.12);
+  --cc-overlay-bg: rgba(15, 23, 42, 0.35);
+}
+
+/* 浮动横幅：底部居中，70% 宽度，圆角，毛玻璃 */
+.cm--bar.cm--bottom {
+  width: 70% !important;
+  max-width: 70% !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+  bottom: 16px !important;
+  border-radius: 14px !important;
+  margin: 0 !important;
+}
+
+.cm {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 14px !important;
+}
+
+.cm__body {
+  padding: 6px 0 10px !important;
+}
+
+.cm__texts {
+  padding: 0 20px !important;
+}
+
+#cm__desc {
+  font-size: 0.92rem !important;
+  line-height: 1.4 !important;
+}
+
+#cc-main .cm__desc {
+  padding-bottom: 0 !important;
+}
+
+.cm__btns {
+  padding: 8px 20px 10px !important;
+  gap: 8px !important;
+}
+
+/* 按钮样式 */
+.cm__btn {
+  font-size: 0.84rem !important;
+  padding: 8px 20px !important;
+  border-radius: 6px !important;
+  line-height: 1.2 !important;
+  box-sizing: border-box !important;
+  min-height: 44px !important;
+  margin: 0 !important;
+}
+
+.cm__btn.cm__btn--secondary {
+  color: var(--cc-btn-secondary-text) !important;
+}
+
+/* bar inline 模式：文字与按钮同行 */
+.cm--bar.cm--bottom .cm__body {
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
+.cm--bar .cm__btns {
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  min-width: max-content !important;
+}
+
+.cm--bar .cm__btn-group {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 8px !important;
+  align-items: center !important;
+}
+
+#cc-main .cm__btn-group + .cm__btn-group {
+  margin-top: 0 !important;
+}
+
+/* 焦点可见性 */
+#cc-main button:focus-visible,
+#cc-main a:focus-visible,
+#cc-main .section__toggle:focus-visible ~ .toggle__icon {
+  outline: 3px solid rgba(37, 99, 235, 0.45);
+  outline-offset: 2px;
+}
+
+/* 移动端适配 */
+@media (max-width: 640px) {
+  .cm--bar.cm--bottom {
+    width: calc(100% - 1.5rem) !important;
+    max-width: calc(100% - 1.5rem) !important;
+    bottom: 12px !important;
+  }
+
+  .cm--bar.cm--bottom .cm__body {
+    flex-direction: column !important;
+  }
+
+  .cm--bar .cm__btns {
+    flex-wrap: wrap !important;
+    min-width: auto !important;
+  }
+}
+
+/* 毛玻璃效果降级 */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .cm {
+    background: #ffffff !important;
+  }
+}

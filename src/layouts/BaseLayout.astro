@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/cookieconsent-overrides.css';
 
 interface Props {
   title: string;
@@ -44,6 +45,9 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
       rel="stylesheet"
     />
 
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css" />
+
     <title>{title}</title>
 
     <!-- Schema.org -->
@@ -64,6 +68,92 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
         "email": "service@wontlost.com"
       }
     })} />
+
+    <!-- Cookie Consent JS -->
+    <script is:inline defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js"></script>
+    <script is:inline>
+      var GA4_ID = 'G-ND0GXVBBWK';
+
+      function setGAConsent(granted) {
+        window['ga-disable-' + GA4_ID] = !granted;
+        if (window.gtag) {
+          window.gtag('consent', 'update', {
+            analytics_storage: granted ? 'granted' : 'denied'
+          });
+        }
+      }
+
+      function handleAnalyticsConsent() {
+        if (CookieConsent.acceptedCategory('analytics')) {
+          setGAConsent(true);
+          loadGA4();
+        } else {
+          setGAConsent(false);
+        }
+      }
+
+      function loadGA4() {
+        if (window._ga4Loaded) return;
+        window._ga4Loaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        window.gtag = window.gtag || gtag;
+        gtag('js', new Date());
+        gtag('config', GA4_ID);
+      }
+
+      window.addEventListener('load', function() {
+        if (typeof CookieConsent === 'undefined') return;
+
+        CookieConsent.run({
+          guiOptions: {
+            consentModal: { layout: 'bar inline', position: 'bottom', equalWeightButtons: false },
+            preferencesModal: { layout: 'box' }
+          },
+
+          categories: {
+            necessary: { enabled: true, readOnly: true },
+            analytics: {
+              autoClear: {
+                cookies: [{ name: /^_ga/ }, { name: '_gid' }]
+              }
+            }
+          },
+
+          onFirstConsent: handleAnalyticsConsent,
+          onConsent: handleAnalyticsConsent,
+          onChange: handleAnalyticsConsent,
+
+          language: {
+            default: 'en',
+            translations: {
+              en: {
+                consentModal: {
+                  description: 'We use cookies to analyze site traffic and improve your experience.',
+                  acceptAllBtn: 'Accept All',
+                  acceptNecessaryBtn: 'Reject All',
+                  showPreferencesBtn: 'Manage'
+                },
+                preferencesModal: {
+                  title: 'Cookie Preferences',
+                  acceptAllBtn: 'Accept All',
+                  acceptNecessaryBtn: 'Reject All',
+                  savePreferencesBtn: 'Save Preferences',
+                  sections: [
+                    { title: 'Essential Cookies', description: 'Required for the site to function properly.', linkedCategory: 'necessary' },
+                    { title: 'Analytics Cookies', description: 'Help us understand how visitors use the site via Google Analytics.', linkedCategory: 'analytics' }
+                  ]
+                }
+              }
+            }
+          }
+        });
+      });
+    </script>
   </head>
   <body class="bg-white text-gray-800 font-body">
     <slot />
