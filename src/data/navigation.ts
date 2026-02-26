@@ -12,7 +12,7 @@ export const footerColumns: FooterColumn[] = [
   {
     title: 'Products',
     links: [
-      { label: 'Aster Lang', href: 'https://aster-lang.cloud/' },
+      { label: 'Aster Lang', href: 'https://aster-lang.dev/' },
       { label: 'Aster Cloud', href: 'https://aster-lang.cloud/' },
       { label: 'VaadinCKEditor', href: 'https://vaadin.com/directory/component/ckeditorvaadin' },
       { label: 'CKEditor Builder', href: '/ckeditor-builder' },
