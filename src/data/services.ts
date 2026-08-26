@@ -51,7 +51,7 @@ export const caseStudy: CaseStudyData = {
   industry: 'Open Source / Developer Tools',
   challenge: 'Vaadin developers lacked a production-ready CKEditor 5 integration. Manual configuration of 70+ plugins, toolbar layouts, and themes required extensive JSON/code editing and deep CKEditor internals knowledge.',
   solution: [
-    'Built a full Vaadin Flow component wrapping CKEditor 5 v47.4.0 with Java builder-pattern API',
+    'Built a full Vaadin Flow component wrapping CKEditor 5 v48.4.0 with Java builder-pattern API',
     'Created an interactive 7-step visual CKEditor Builder for zero-code configuration',
     'Implemented multi-format code export (Java, TypeScript, JSON) for instant integration',
     'Published to Maven Central and Vaadin Directory with 4.92/5 rating across 25 reviews',
@@ -59,7 +59,7 @@ export const caseStudy: CaseStudyData = {
   metrics: [
     { value: '4.92/5', label: 'Community Rating' },
     { value: '70+', label: 'Plugins Integrated' },
-    { value: '5.1.0', label: 'Current Version' },
+    { value: '5.3.3', label: 'Current Version' },
   ],
 };
 
