@@ -26,6 +26,22 @@ export const products: Product[] = [
     badges: ['Spring Boot', 'Vaadin', 'Live Preview', 'Code Export'],
   },
   {
+    name: 'MotionVaadin',
+    tagline: 'Server-driven motion for Vaadin Flow',
+    description: 'Restrained, declarative animation for Vaadin Flow, powered by anime.js v4. Lifecycle and staggered entrances, FLIP list reordering, pointer dragging with axis locking and grid snapping, scroll-triggered reveals, SVG stroke drawing and path morphing, plus count-up and skeleton loading effects.',
+    href: 'https://vaadin.com/directory/component/motionvaadin',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
+    badges: ['Java 21+', 'Vaadin 25+', 'anime.js v4', 'Early Access'],
+  },
+  {
+    name: 'ZXingVaadin',
+    tagline: 'QR and barcode scanning for Vaadin',
+    description: 'Camera-based QR code and barcode scanning for Vaadin Flow, wrapping zxing-js. Reads multi-format 1D and 2D barcodes, generates QR codes, supports multiple video sources with device switching, and includes built-in reset handling.',
+    href: 'https://vaadin.com/directory/component/zxingvaadin',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5zM13.5 14.625h2.25m4.5 0H18m-4.5 4.5h2.25m4.5 0H18" /></svg>`,
+    badges: ['Java 21+', 'Vaadin 24+', 'zxing-js', 'QR & Barcode'],
+  },
+  {
     name: 'Aster Cloud',
     tagline: 'Policy management SaaS platform',
     description: 'Create, test, and deploy business policies with built-in PII protection, GDPR/HIPAA compliance monitoring, and team collaboration. REST API with multi-language SDKs.',
