@@ -12,6 +12,7 @@ export const footerColumns: FooterColumn[] = [
   {
     title: 'Products',
     links: [
+      { label: 'AG-UI for Vaadin', href: '/agui-vaadin-pro' },
       { label: 'Aster Lang', href: 'https://aster-lang.dev/' },
       { label: 'Aster Cloud', href: 'https://aster-lang.cloud/' },
       { label: 'VaadinCKEditor', href: 'https://vaadin.com/directory/component/ckeditorvaadin' },
@@ -33,6 +34,8 @@ export const footerColumns: FooterColumn[] = [
     title: 'Resources',
     links: [
       { label: 'GitHub', href: 'https://github.com/wontlost-ltd' },
+      { label: 'AG-UI on Vaadin Directory', href: 'https://vaadin.com/directory/component/aguivaadin' },
+      { label: 'AG-UI live demo', href: 'https://agui.wontlost.com' },
       { label: 'Maven Central', href: 'https://mvnrepository.com/artifact/com.wontlost/ckeditor-vaadin' },
       { label: 'Vaadin Directory', href: 'https://vaadin.com/directory/component/ckeditorvaadin' },
       { label: 'npm Registry', href: 'https://www.npmjs.com/package/@aster-cloud/aster-lang-ts' },
