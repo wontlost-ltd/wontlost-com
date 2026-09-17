@@ -2,6 +2,14 @@ import type { Product } from '../types';
 
 export const products: Product[] = [
   {
+    name: 'AG-UI for Vaadin',
+    tagline: 'AI chat component with an open-source core and Pro persistence',
+    description: 'AG-UI protocol chat for Vaadin Flow: structured agent events streamed straight to the browser, tool calls, thinking blocks and shared state, no @Push. Apache 2.0 on Maven Central. Pro adds conversations, audit trail and state panel; Enterprise adds identity, approvals, metering, governance, observability and a console.',
+    href: '/agui-vaadin-pro',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" /></svg>`,
+    badges: ['Java 21+', 'Vaadin 25+', 'Spring AI 2', 'Apache 2.0 + Pro'],
+  },
+  {
     name: 'Aster Lang',
     tagline: 'Human-readable policy language',
     description: 'A type-safe programming language with controlled natural language syntax. Write executable business policies in plain English, Chinese, or German. Powered by a TypeScript compiler and GraalVM Truffle runtime.',
