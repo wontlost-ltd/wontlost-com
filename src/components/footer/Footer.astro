@@ -1,5 +1,6 @@
 ---
 import Container from '../ui/Container.astro';
+import Logo from '../ui/Logo.astro';
 import { footerColumns } from '../../data/navigation';
 
 const currentYear = new Date().getFullYear();
@@ -12,9 +13,7 @@ const currentYear = new Date().getFullYear();
         <!-- 品牌列 -->
         <div class="sm:col-span-2 lg:col-span-1">
           <a href="/" class="flex items-center gap-2 mb-4">
-            <div class="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
-              <span class="text-white font-heading font-bold text-sm">W</span>
-            </div>
+            <Logo theme="dark" class="h-7 w-auto" />
             <span class="font-heading font-bold text-xl text-white">wontlost</span>
           </a>
           <p class="text-gray-400 text-sm leading-relaxed mb-6">
