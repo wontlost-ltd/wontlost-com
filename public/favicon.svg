@@ -1,4 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#3b82f6"/>
-  <text x="16" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="700" font-size="18" fill="white">W</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .l{fill:none;stroke:#3b82f6;stroke-width:4.4;stroke-linecap:round;stroke-linejoin:round}
+    .d{fill:#2563eb}
+    .s{fill:#06b6d4}
+    @media (prefers-color-scheme: dark){
+      .l{stroke:#60a5fa}
+      .d{fill:#eff6ff}
+      .s{fill:#67e8f9}
+    }
+  </style>
+  <path class="l" d="M7 23L19 47L26.7 34.5M37.3 34.5L45 47L57 23"/>
+  <circle class="d" cx="7" cy="23" r="5.5"/>
+  <circle class="d" cx="19" cy="47" r="5.5"/>
+  <circle class="d" cx="45" cy="47" r="5.5"/>
+  <circle class="d" cx="57" cy="23" r="5.5"/>
+  <path class="s" d="M32 14Q34.6 23.4 44 26Q34.6 28.6 32 38Q29.4 28.6 20 26Q29.4 23.4 32 14Z"/>
 </svg>

@@ -1,6 +1,7 @@
 ---
 import Container from '../ui/Container.astro';
 import MobileMenu from './MobileMenu.astro';
+import Logo from '../ui/Logo.astro';
 import { mainNav } from '../../data/navigation';
 ---
 
@@ -9,9 +10,7 @@ import { mainNav } from '../../data/navigation';
     <nav class="flex items-center justify-between h-16 lg:h-20">
       <!-- Logo -->
       <a href="/" class="flex items-center gap-2">
-        <div class="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
-          <span class="text-white font-heading font-bold text-sm">W</span>
-        </div>
+        <Logo theme="light" class="h-7 w-auto" />
         <span class="font-heading font-bold text-xl text-gray-900">wontlost</span>
       </a>
 
