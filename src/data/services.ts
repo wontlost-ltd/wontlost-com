@@ -59,7 +59,7 @@ export const caseStudy: CaseStudyData = {
   metrics: [
     { value: '4.92/5', label: 'Community Rating' },
     { value: '70+', label: 'Plugins Integrated' },
-    { value: '5.4.0', label: 'Current Version' },
+    { value: '5.4.1', label: 'Current Version' },
   ],
 };
 
